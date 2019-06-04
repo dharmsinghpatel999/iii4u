@@ -1,0 +1,29 @@
+
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+.bg-secondary {
+    background-color: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:red;
+}
+
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(7,12,18, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-dark .navbar-toggler {
+    color: black;
+    border-color: black;
+}

@@ -1,0 +1,29 @@
+.text-size-medium{
+    font-size: 0.9rem;
+}
+.divider {
+    height: 1px;
+    width:100%;
+    display:block; /* for use on default inline elements like span */
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.long-divider {
+    height: 15px;
+    width:100%;
+    display:block; /* for use on default inline elements like span */
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.medium-divider {
+    height: 103px;
+    background-color:lightgrey;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .header{
+        padding:0px 50px
+    }
+}

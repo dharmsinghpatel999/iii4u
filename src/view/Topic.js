@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-export default class App extends Component {
+class Topic extends Component {
   render() {
     return (
-      <div> APP </div>
+      <div> Topic</div>
     );
   }
 }
+
+export {Topic}
