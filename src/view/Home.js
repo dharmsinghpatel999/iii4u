@@ -91,7 +91,7 @@ class Home extends Component {
     render() {
         const { index, direction } = this.state;
         return (
-            <div>
+            <section>
                 {/* slide show */}
                 <Carousel
                     activeIndex={index}
@@ -136,12 +136,12 @@ class Home extends Component {
                 </Carousel>
 
                 {/* content */}
-                <div className='d-flex justify-content-center bg-success flex-column align-items-center pt-5 pb-5 pl-5 pr-5'>
-                    <h3 className='text-light'>Welcome to our company!</h3>
-                    <p className='align-self-center mt-2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
+                <article className='welcome-body'>
+                    <h2 className='text-light'><strong>Welcome to our company!</strong></h2>
+                    <p className='text-light align-self-center mt-2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
                     </p>
-                    <Button variant='light' block className='text-success'>Learn more >></Button>
-                </div>
+                    <Button variant='light' className='text-success pr-2 pl-2'>Learn more >></Button>
+                </article>
 
                 <div className='d-flex bg-secondary flex-column pt-5 pb-5 pl-5 pr-5'>
                     {this.renderProduct(product)}
@@ -163,7 +163,7 @@ class Home extends Component {
                         {this.videoesList(this.state.videoList)}
                     </div>
                 </Col>
-            </div>
+            </section>
         );
     }
 }

@@ -1,3 +1,5 @@
+@import "../resources/colors.css";
+
 .text-size-medium{
     font-size: 0.9rem;
 }
@@ -7,20 +9,24 @@
     display:block; /* for use on default inline elements like span */
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5;
+    background-color:lightgray;
 }
 .long-divider {
-    height: 15px;
-    width:100%;
-    display:block; /* for use on default inline elements like span */
-    overflow: hidden;
-    background-color: #e5e5e5;
+    height: 25px;
+    background-color: lightgray;
 }
 .medium-divider {
-    height: 103px;
+    height: 100px;
     background-color:lightgrey;
 }
-
+.welcome-body{
+    background-color:var(--green-bg-color);
+    display: flex;
+    padding: 3rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 @media only screen and (min-width: 600px) {
     .header{
