@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Nav, Navbar, Form, FormControl, NavDropdown, Container } from 'react-bootstrap';
-import { images, colors } from '../../resources'
+import { Nav, Navbar, NavDropdown, } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { colors } from '../../resources';
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -38,10 +39,10 @@ export default class NavBar extends Component {
     render() {
         console.log('match', this.props.match);
         return (
-            <section>
-                <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top'}>
+            <header id='header'>
+                <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top'} style={{ color: colors.dark_white }}>
                     <div className={this.state.visible ? 'divider' : ''} />
-                    <Navbar expand='lg' bg='light' variant='dark' className='header shadow'>
+                    <Navbar expand='lg' bg='light' variant='dark' className={this.state.visible ? 'header-static shadow' : 'header-flow'}>
                         <Navbar.Brand href='#home'>
                             {/* <img
                                 src={images.logo}
@@ -55,24 +56,24 @@ export default class NavBar extends Component {
                         <Navbar.Toggle aria-controls='basic-navbar-nav' variant='dark' />
                         <Navbar.Collapse className='justify-content-end text-size-medium ' id='basic-navbar-nav'>
                             <Nav>
-                                <Nav.Link href='/about' >{'ABOUT US'}</Nav.Link>
-                                <Nav.Link href='/services'>{'SERVICES'}</Nav.Link>
-                                <NavDropdown title='PRODUCTS' id='basic-nav-dropdown'>
-                                    <NavDropdown.Item href='/'>Apple</NavDropdown.Item>
-                                    <NavDropdown.Item href='#action/3.2'>Mengo</NavDropdown.Item>
-                                    <NavDropdown.Item href='#action/3.3'>Banana</NavDropdown.Item>
+                                <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
+                                <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
+                                <NavDropdown as={NavLink} title='PRODUCTS' id='basic-nav-dropdown'>
+                                    <NavDropdown.Item className='nav-link' to='/'>Apple</NavDropdown.Item>
+                                    <NavDropdown.Item className='nav-link' to='#action/3.2'>Mengo</NavDropdown.Item>
+                                    <NavDropdown.Item className='nav-link' to='#action/3.3'>Banana</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href='#action/3.4'>OTHER</NavDropdown.Item>
+                                    <NavDropdown.Item className='nav-link' to='#action/3.4'>OTHER</NavDropdown.Item>
                                 </NavDropdown>
-                                <Nav.Link href='/newsevents'>{'NEWS & EVENTS'}</Nav.Link>
-                                <Nav.Link href='/contacts'>{'CONTACTS'}</Nav.Link>
-                                <Nav.Link href='/blog'>{'BLOG'}</Nav.Link>
+                                <NavLink className='nav-link' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
+                                <NavLink className='nav-link' to='/contacts'>{'CONTACTS'}</NavLink>
+                                <NavLink className='nav-link' to='/blog'>{'BLOG'}</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
-                    <div className={this.state.visible ? 'mb-1' : ''} />
+                    <div className={this.state.visible ? 'medium-divider' : ''} />
                 </article>
-            </section>
+            </header>
         );
     }
 }

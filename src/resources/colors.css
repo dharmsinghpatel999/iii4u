@@ -1,5 +1,10 @@
 :root {
-    --light-bg-color:light;
-    --green-bg-color:#03a277;
-    --gray-bg-color:lightGray;
+    --white:#ffffff;
+    --dark-white:#f5f5f2;
+    --dark-red:#ce3e10;
+    --black:#000000;
+    --light-gray:#eaeae0;
+    --medium-gray:#453f38;
+    --dark-gray:#393430;
+    --green:#03a277;
 }

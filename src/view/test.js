@@ -21,32 +21,40 @@ class About extends Component {
     }
 
     renderProduct(data, key = 0) {
+        console.log('element', data)
         if (data.length !== 0) {
             return (
                 <Row key={`row${key}`}>
                     {
                         data.map((element, index) => {
-                            return (
-                                <Col xs={12} md={4} key={`col${index}`}>
-                                    <Row>
-                                        <img
-                                            src={images.logo}
-                                            width='30'
-                                            height='30'
-                                            className='d-inline-block align-top'
-                                            alt='iii4u'
-                                        />
-                                        <Col>
-                                            <h6>{element.title}</h6>
-                                            <p className='text-light'>{element.peragraph}</p>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            )
+                            if (index > 2) {
+                                data = data.slice(3)
+                                return this.renderProduct(data, ++key)
+                            } else {
+                                return (
+                                    <Col xs={12} md={4} key={`col${index}`}>
+                                        <Row>
+                                            <img
+                                                src={images.logo}
+                                                width='30'
+                                                height='30'
+                                                className='d-inline-block align-top'
+                                                alt='iii4u'
+                                            />
+                                            <Col>
+                                                <h6>{element.title}</h6>
+                                                <p className='text-light'>{element.peragraph}</p>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                )
+                            }
                         })
                     }
                 </Row>
             )
+        } else {
+            return null;
         }
     }
 
@@ -132,7 +140,7 @@ class About extends Component {
                     <h2 className='text-light'><strong>Welcome to our company!</strong></h2>
                     <p className='text-light align-self-center mt-3 text-light-x2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
                     </p>
-                    <Button variant='light' className='text-success pr-5 pl-5 mt-3 btn btn-light' style={{ color: colors.green }}>Learn more >></Button>
+                    <Button variant='light' className='text-success pr-5 pl-5 mt-3' style={{ color: colors.green }}>Learn more >></Button>
                 </article>
 
                 <div className='d-flex flex-column pb-5 pt-5 layout-body' style={{ backgroundColor: colors.light_gray }}>
@@ -213,21 +221,6 @@ const product = [
     {
         img: '',
         title: 'QUISQUE NULLA VESTIBULUM3',
-        peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
-    },
-    {
-        img: '',
-        title: 'QUISQUE NULLA VESTIBULUM4',
-        peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
-    },
-    {
-        img: '',
-        title: 'QUISQUE NULLA VESTIBULUM5',
-        peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
-    },
-    {
-        img: '',
-        title: 'QUISQUE NULLA VESTIBULUM6',
         peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
     },
     {

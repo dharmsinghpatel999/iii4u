@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Carousel, Button, Row, Col, Card } from 'react-bootstrap';
-import { images } from '../resources';
+import { Carousel, Button, Row, Col, Card, Container } from 'react-bootstrap';
+import { images, colors } from '../resources';
 
 class About extends Component {
     constructor(props, context) {
@@ -27,34 +27,28 @@ class About extends Component {
                 <Row key={`row${key}`}>
                     {
                         data.map((element, index) => {
-                            if (index > 2) {
-                                data = data.slice(3)
-                                return this.renderProduct(data, ++key)
-                            } else {
-                                return (
-                                    <Col xs={12} md={4} key={`col${index}`}>
-                                        <Row>
-                                            <img
-                                                src={images.logo}
-                                                width='30'
-                                                height='30'
-                                                className='d-inline-block align-top'
-                                                alt='iii4u'
-                                            />
-                                            <Col>
-                                                <h6>{element.title}</h6>
-                                                <p className='text-light'>{element.peragraph}</p>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                )
-                            }
+                            return (
+                                <Col xs={12} md={4} key={`col${index}`}>
+                                    <Row>
+                                        <img
+                                            src={images.logo}
+                                            width='50'
+                                            height='50'
+                                            className='d-inline-block align-top'
+                                            alt='iii4u'
+                                            color={colors.medium_gray}
+                                        />
+                                        <Col>
+                                            <h4 style={{ color: colors.medium_gray }}><strong>{element.title}</strong></h4>
+                                            <p className='text-light text-bold-x1'>{element.peragraph}</p>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            )
                         })
                     }
                 </Row>
             )
-        } else {
-            return null;
         }
     }
 
@@ -94,6 +88,9 @@ class About extends Component {
             <section>
                 {/* slide show */}
                 <Carousel
+                    interval={200000}
+                    indicators={false}
+                    fade={true}
                     activeIndex={index}
                     direction={direction}
                     onSelect={this.handleSelect.bind(this)}
@@ -104,10 +101,6 @@ class About extends Component {
                             src='https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg'
                             alt='First slide'
                         />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
@@ -115,11 +108,6 @@ class About extends Component {
                             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA'
                             alt='Third slide'
                         />
-
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
@@ -127,27 +115,22 @@ class About extends Component {
                             src='https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC'
                             alt='Third slide'
                         />
-
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
 
                 {/* content */}
-                <article className='welcome-body'>
+                <article className='welcome-body layout-body text-center'>
                     <h2 className='text-light'><strong>Welcome to our company!</strong></h2>
-                    <p className='text-light align-self-center mt-2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
+                    <p className='text-light mt-3 text-light-x2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
                     </p>
-                    <Button variant='light' className='text-success pr-2 pl-2'>Learn more >></Button>
+                    <Button variant='light' className='pr-5 pl-5 mt-3' style={{ color: colors.green }}>Learn more >></Button>
                 </article>
 
-                <div className='d-flex bg-secondary flex-column pt-5 pb-5 pl-5 pr-5'>
+                <article className='d-flex flex-column pt-5 pb-5 layout-body' style={{ backgroundColor: colors.light_gray }}>
                     {this.renderProduct(product)}
-                </div>
+                </article>
 
-                <Col className='mt-5 mb-5'>
+                <Col className='mt-5 mb-5 layout-body'>
                     <div>
                         <div className='d-flex justify-content-between'>
                             <h6>OUR PRODUCTS</h6>

@@ -1,0 +1,73 @@
+
+.text-x1 {
+    font-size: 1rem;
+    color: darkGray
+}
+.text-x2{
+    font-size: 1.2rem;
+    color:darkGray
+}
+.text-x3{
+    font-size: 1.5rem;
+    color:darkGray
+}
+.text-light-x1 {
+    font-size: 1rem;
+    font-weight: 100;
+    color: darkGray
+}
+.text-light-x2{
+    font-size: 1.2rem;
+    font-weight: 100;
+    color:darkGray
+}
+.text-light-x3 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    color:darkGray
+}
+.text-medium-x1 {
+    font-size: 1rem;
+    font-weight: 200;
+    color: darkGray
+}
+.text-medium-x2{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color:darkGray
+}
+.text-medium-x3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color:darkGray
+}
+.text-bold-x1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: darkGray
+}
+.text-bold-x2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:darkGray
+}
+.text-bold-x3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:darkGray
+}
+.text-small-light {
+    font-size: .5rem;
+    font-weight: 100;
+    color: darkGray
+}
+.text-small-medium{
+    font-size: .5rem;
+    font-weight: 200;
+    color:darkGray
+}
+.text-small-bold {
+    font-size: .5rem;
+    font-weight: 500;
+    color:darkGray
+}
