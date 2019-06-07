@@ -55,6 +55,10 @@
     margin-left: 0px;
 }
 
+body {
+    line-height: auto;
+}
+
 @media (min-width: 992px){
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 1rem;

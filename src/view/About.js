@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel, Button, Row, Col, Card, Container } from 'react-bootstrap';
+import { Carousel, Button, Row, Col, Card } from 'react-bootstrap';
+import { FaAngleRight } from 'react-icons/fa';
 import { images, colors } from '../resources';
+import { DocList, TitleNav, CardList, Info } from '../component/common';
 
 class About extends Component {
     constructor(props, context) {
@@ -10,6 +12,7 @@ class About extends Component {
             direction: null,
             videoList: videoes.slice(0, 4)
         };
+        console.log('window=', window.innerHeight);
     }
 
     handleSelect(selectedIndex, e) {
@@ -20,73 +23,10 @@ class About extends Component {
         console.log(this.state, e);
     }
 
-    renderProduct(data, key = 0) {
-        console.log('element', data)
-        if (data.length !== 0) {
-            return (
-                <Row key={`row${key}`}>
-                    {
-                        data.map((element, index) => {
-                            return (
-                                <Col xs={12} md={4} key={`col${index}`}>
-                                    <Row>
-                                        <img
-                                            src={images.logo}
-                                            width='50'
-                                            height='50'
-                                            className='d-inline-block align-top'
-                                            alt='iii4u'
-                                            color={colors.medium_gray}
-                                        />
-                                        <Col>
-                                            <h4 style={{ color: colors.medium_gray }}><strong>{element.title}</strong></h4>
-                                            <p className='text-light text-bold-x1'>{element.peragraph}</p>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            )
-                        })
-                    }
-                </Row>
-            )
-        }
-    }
-
-    videoesList(videoes, key = 0) {
-        console.log('element', videoes)
-        if (videoes.length !== 0) {
-            return (
-                <Row xs={12} md={4} key={`row${key}`}>
-                    {
-                        videoes.map((element, index) => {
-                            return (
-                                <Col key={`col${index}`}>
-                                    <Card style={{ width: '15rem' }}>
-                                        <Card.Img variant='top' src='https://www.w3schools.com/images/picture.jpg' />
-                                        <Card.Body>
-                                            <Card.Title>{element.title}</Card.Title>
-                                            <Card.Text>
-                                                {element.peragraph}
-                                            </Card.Text>
-                                            <Button variant='primary'>Go somewhere</Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            )
-                        })
-                    }
-                </Row>
-            )
-        } else {
-            return null;
-        }
-    }
-
     render() {
         const { index, direction } = this.state;
         return (
             <section>
-                {/* slide show */}
                 <Carousel
                     interval={200000}
                     indicators={false}
@@ -95,62 +35,44 @@ class About extends Component {
                     direction={direction}
                     onSelect={this.handleSelect.bind(this)}
                 >
-                    <Carousel.Item>
-                        <img
-                            className='d-block w-100 img-circle'
-                            src='https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg'
-                            alt='First slide'
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className='d-block w-100'
-                            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA'
-                            alt='Third slide'
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className='d-block w-100'
-                            src='https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC'
-                            alt='Third slide'
-                        />
-                    </Carousel.Item>
+                    {
+                        pictures.map((picture, index) => {
+                            return (
+                                <Carousel.Item key={index}>
+                                    <img
+                                        className='d-block w-100 img-circle'
+                                        src={picture}
+                                        alt='First slide'
+                                    />
+                                </Carousel.Item>
+                            )
+                        })
+                    }
                 </Carousel>
 
-                {/* content */}
-                <article className='welcome-body layout-body text-center'>
-                    <h2 className='text-light'><strong>Welcome to our company!</strong></h2>
-                    <p className='text-light mt-3 text-light-x2'>Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.
-                    </p>
-                    <Button variant='light' className='pr-5 pl-5 mt-3' style={{ color: colors.green }}>Learn more >></Button>
-                </article>
+                <Info data={welcome} />
 
-                <article className='d-flex flex-column pt-5 pb-5 layout-body' style={{ backgroundColor: colors.light_gray }}>
-                    {this.renderProduct(product)}
-                </article>
+                <DocList data={product} />
 
-                <Col className='mt-5 mb-5 layout-body'>
-                    <div>
-                        <div className='d-flex justify-content-between'>
-                            <h6>OUR PRODUCTS</h6>
-                            <div className='d-flex flex-row'>
-                                <h6 onClick={() => this.setState({ videoList: videoes.slice(4, 6) })}>{`<`}</h6>
-                                <h6 onClick={() => this.setState({ videoList: videoes.slice(0, 4) })}>{`>`}</h6>
-                            </div>
-                        </div>
-                        <div className='divider' />
-                    </div>
-
-                    <div className='d-flex justify-content-around bg-primary'>
-                        {this.videoesList(this.state.videoList)}
-                    </div>
-                </Col>
+                <TitleNav />
+                <CardList data={this.state.videoList} />
             </section>
         );
     }
 }
 export { About }
+
+const pictures = [
+    'https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA',
+    'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC'
+]
+
+const welcome = {
+    title: 'Welcome to our company!',
+    body: 'Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.',
+    btn: 'Learn more'
+}
 
 const videoes = [
     {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { colors } from '../../resources';
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -40,7 +39,7 @@ export default class NavBar extends Component {
         console.log('match', this.props.match);
         return (
             <header id='header'>
-                <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top'} style={{ color: colors.dark_white }}>
+                <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top color-dark-white'}>
                     <div className={this.state.visible ? 'divider' : ''} />
                     <Navbar expand='lg' bg='light' variant='dark' className={this.state.visible ? 'header-static shadow' : 'header-flow'}>
                         <Navbar.Brand href='#home'>
@@ -54,7 +53,7 @@ export default class NavBar extends Component {
                             <h1 className='text-dark'>iii4U</h1>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls='basic-navbar-nav' variant='dark' />
-                        <Navbar.Collapse className='justify-content-end text-size-medium ' id='basic-navbar-nav'>
+                        <Navbar.Collapse className='justify-content-end text-size-medium' id='basic-navbar-nav'>
                             <Nav>
                                 <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
                                 <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
