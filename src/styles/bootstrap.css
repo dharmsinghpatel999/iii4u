@@ -11,6 +11,10 @@
 .navbar-dark .navbar-nav .nav-link {
     color: black;
 }
+
+.nav .nav-link {
+    color: var(--light-gray);
+}
 .bg-secondary {
     background-color: white;
 }
@@ -18,7 +22,15 @@
     color: var(--dark-red);
 }
 
+.nav .nav-link:focus, .navbar-nav .nav-link:hover {
+    color: var(--dark-red);
+}
+
 .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: var(--dark-red);
+}
+
+.nav .active>.nav-link, .nav .nav-link.active, .nav .nav-link.show, .nav .show>.nav-link {
     color: var(--dark-red);
 }
 

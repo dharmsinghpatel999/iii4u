@@ -9,7 +9,7 @@ const CardList = ({ data, key = 0 }) => {
                     {
                         data.slice(0, 4).map((element, index) => {
                             return (
-                                <Col key={`col${index}`} >
+                                <Col key={`col${index}`} xs={12} md={6} lg={3}>
                                     <Card >
                                         <Card.Img variant='top' src='https://www.w3schools.com/images/picture.jpg' />
                                         <Card.Body>
