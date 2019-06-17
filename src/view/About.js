@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { Carousel, Button, Row, Col, Card, Nav } from 'react-bootstrap';
-import { FaAngleRight } from 'react-icons/fa';
+import {
+    FaAngleRight,
+    FaGooglePlus,
+    FaTwitter,
+    FaFacebook,
+    FaPinterest,
+    FaLinkedin
+} from 'react-icons/fa';
 import { images, colors } from '../resources';
 import { DocList, TitleNav, CardList, Info } from '../component/common';
 import { NavLink } from 'react-router-dom';
@@ -60,58 +67,58 @@ class About extends Component {
 
                 <Info data={event} />
 
-                <article className='bgc-medium-gray justify-content-md-center pt-5 pb-5 layout-body'>
-                    <Row>
-                        <Col xs={12} md={3} lg={3} >
-                            <h3 class='lead color-green line-height-normal'>Get in touch</h3>
-                            <address className='small mt-3 mb-3'>8901 Marmora Road<br />Glasgow, DO4 89GR.</address>
-                            <dl class='row small'>
-                                <dt>Freephone: </dt>
-                                <dd> +1 800 559 6580</dd>
-                            </dl>
-                            <dl class='row small'>
-                                <dt>Telephone: </dt>
-                                <dd> +1 959 603 6035</dd>
-                            </dl>
-                            <dl class='row small'>
-                                <dt>FAX:  </dt>
-                                <dd> +1 504 889 9898</dd>
-                            </dl>
+                <article className='bgc-medium-gray pt-5 pb-5 row layout-body text-center'>
+                    <Col xs={12} md={3} lg={3} className=''>
+                        <h3 className='lead color-green line-height-normal'>Get in touch</h3>
+                        <address className='small mt-3 mb-3 color_link_icon'>8901 Marmora Road<br />Glasgow, DO4 89GR.</address>
+                        <dl className='small color_link_icon'>
+                            <dt>Freephone: </dt>
+                            <dd> +1 800 559 6580</dd>
+                        </dl>
+                        <dl className='small color_link_icon'>
+                            <dt>Telephone: </dt>
+                            <dd> +1 959 603 6035</dd>
+                        </dl>
+                        <dl className='small color_link_icon'>
+                            <dt>FAX:  </dt>
+                            <dd> +1 504 889 9898</dd>
+                        </dl>
 
-                            <p className='small color-white'>
-                                © 2019 James. Agriculture Co.
-                                Privacy Policy
+                        <p className='small color-white'>
+                            © 2019 James. Agriculture Co.
+                            Privacy Policy
                             </p>
-                        </Col>
-                        <Col xs={12} md={3} lg={3}>
-                            <Nav
-                                activeKey="/home"
-                                onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-                                className='flex-column small'
-                            >
-                                <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
-                                <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
-                                <NavLink className='nav-link' to='/products'>{'PRODUCTS'}</NavLink>
-                                <NavLink className='nav-link' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
-                                <NavLink className='nav-link' to='/contacts'>{'CONTACTS'}</NavLink>
-                                <NavLink className='nav-link' to='/blog'>{'BLOG'}</NavLink>
-                            </Nav>
-                        </Col>
-                        <Col xs={12} md={3} lg={3}>
-                            <h6>Follow us</h6>
-                            <Row>
-                                <h6>Follow us</h6>
-                                <h6>Follow us</h6>
-                                <h6>Follow us</h6>
-                                <h6>Follow us</h6>
-                            </Row>
-                        </Col>
-                        <Col xs={12} md={3} lg={3}>
-                            <h6>Join our newsletter</h6>
-                            <h6>And always stay informed of the latest farm and location news!</h6>
-                            <Button>Sign up>></Button>
-                        </Col>
-                    </Row>
+                    </Col>
+                    <Col xs={12} md={3} lg={3} className=''>
+                        <h2 className='color-green lead'>Go our services</h2>
+                        <Nav
+                            activeKey="/home"
+                            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+                            className='flex-column small'
+                        >
+                            <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
+                            <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
+                            <NavLink className='nav-link' to='/products'>{'PRODUCTS'}</NavLink>
+                            <NavLink className='nav-link' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
+                            <NavLink className='nav-link' to='/contacts'>{'CONTACTS'}</NavLink>
+                            <NavLink className='nav-link' to='/blog'>{'BLOG'}</NavLink>
+                        </Nav>
+                    </Col>
+                    <Col xs={12} md={3} lg={3} className='footer'>
+                        <h2 className='color-dark-white lead'>Follow us</h2>
+                        <Row className='d-flex justify-content-between'>
+                            <FaGooglePlus size='2em' color={colors.link_icon} />
+                            <FaTwitter size='2em' color={colors.link_icon} />
+                            <FaFacebook size='2em' color={colors.link_icon} />
+                            <FaPinterest size='2em' color={colors.link_icon} />
+                        </Row>
+                    </Col>
+                    <Col xs={12} md={3} lg={3} className='footer'>
+                        <h6 className='color-dark-white lead'>Join our newsletter</h6>
+                        <p className='color_link_icon'>And always stay informed of the latest farm and location news!</p>
+                        <Button>Sign up</Button>
+                    </Col>
+
                 </article>
             </section>
         );

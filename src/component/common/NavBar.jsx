@@ -53,7 +53,7 @@ export default class NavBar extends Component {
                             <h1 className='text-dark'>iii4U</h1>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls='basic-navbar-nav' variant='dark' />
-                        <Navbar.Collapse className='justify-content-end text-size-medium' id='basic-navbar-nav'>
+                        <Navbar.Collapse className='justify-content-end text-size-medium text-center' id='basic-navbar-nav'>
                             <Nav>
                                 <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
                                 <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>

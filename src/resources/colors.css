@@ -7,10 +7,14 @@
     --medium-gray:#453f38;
     --dark-gray:#393430;
     --green:#03a277;
+    --link_icon: #847a72;
 }
 
 .color-white{
     color:var(--white);
+}
+.color_link_icon{
+    color:var(--link_icon);
 }
 .color-dark-white{
     color:var(--dark-white);
