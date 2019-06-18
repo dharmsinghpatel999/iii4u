@@ -6,7 +6,8 @@
 .divider {
     height: 1px;
     margin: 9px 0px 0px 0px;
-    background-color:var(--light-gray);
+    /* background-color:var(--light-gray); */
+    background-color:var(--white);
 }
 .long-divider {
     height: 25px;
@@ -47,6 +48,7 @@ line-height: 34%;
     margin-bottom: 1.5rem;
 }
 
+
 @media only screen and (min-width: 992px) {
     #header .header-static{
         padding:1rem 7.5rem 0rem 7.5rem;;
@@ -83,5 +85,8 @@ line-height: 34%;
 @media only screen and (max-width:770px){
     .footer{
         margin-top:2rem
+    }
+    #footer{
+        text-align: center;
     }
 }
