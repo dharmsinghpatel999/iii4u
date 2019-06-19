@@ -15,20 +15,20 @@ const Footer = ({ footer }) => {
             <Col xs={12} md={3} lg={3} className=''>
                 <h3 className='lead color-green line-height-normal mb-4'>Get in touch</h3>
                 <address className='small mt-3 mb-3 color-light-gray'>8901 Marmora Road Glasgow, DO4 89GR.</address>
-                <dl className='row small color-light-gray'>
+                <dl className='footer-row small color-light-gray'>
                     <dt>Freephone: </dt>
                     <dd>{footer.getInTouch.freephone}</dd>
                 </dl>
-                <dl className='row small color-light-gray'>
+                <dl className='footer-row small color-light-gray'>
                     <dt>Telephone: </dt>
                     <dd>{footer.getInTouch.telephone}</dd>
                 </dl>
-                <dl className='row small color-light-gray'>
+                <dl className='footer-row small color-light-gray'>
                     <dt>FAX:  </dt>
                     <dd>{footer.getInTouch.fax}</dd>
                 </dl>
 
-                <p className='row small color-white'>{footer.getInTouch.by}</p>
+                <p className='footer-row small color-white'>{footer.getInTouch.by}</p>
             </Col>
             <Col xs={12} md={3} lg={3} className='text-center' id='footer-nav'>
                 {/* <h2 className='color-green lead mb-4'>Go our services</h2> */}

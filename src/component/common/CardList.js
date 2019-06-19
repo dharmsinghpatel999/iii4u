@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button, Row, Col, Card } from 'react-bootstrap';
+import { TitleNav } from './TitleNav';
+import { colors } from '../../resources';
 
 const CardList = ({ data, key = 0 }) => {
     if (data.length !== 0) {
         return (
-            <article className='d-flex flex-column layout-body bgc-white'>
+            <article className='d-flex flex-column layout-body bgc-white mt-5 mb-5'>
+                <TitleNav dividerStyle={{ backgroundColor: colors.dark_gray }} faAngleRight={'white'} />
                 <Row key={`row${key}`}>
                     {
                         data.slice(0, 4).map((element, index) => {

@@ -53,7 +53,6 @@ class About extends Component {
 
                 <DocList data={product} />
 
-                <TitleNav />
                 <CardList data={this.state.videoList} />
 
                 <Info data={event} />
