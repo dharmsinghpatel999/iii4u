@@ -47,14 +47,14 @@ line-height: 34%;
 
 /* icon */
 #title-divider-nav .icon:hover{
-    color: var(--color-red);
+    color: var(--dark-gray);
 }
 #title-divider-nav .icon{
     color: var(--dark-white);
 }
 
 #title-divider-nav .icon-white:hover{
-    color: var( --dark-gray);
+    color: var(--dark-gray);
 }
 #title-divider-nav .icon-white{
     color: var(--light-gray);

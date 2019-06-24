@@ -9,7 +9,7 @@ import {
 import { colors } from '../../resources';
 import { NavLink } from 'react-router-dom';
 
-const Footer = ({ footer }) => {
+const Footer = ({ footer = mainFooter }) => {
     return (
         <article className='bgc-medium-gray pt-5 pb-5 row layout-body' id='footer'>
             <Col xs={12} md={3} lg={3} className=''>
@@ -38,12 +38,12 @@ const Footer = ({ footer }) => {
                     onSelect={selectedKey => alert(`selected ${selectedKey}`)}
                     className='flex-column small'
                 >
-                    <NavLink exact className='nav-link  small' to='/'>{'ABOUT US'}</NavLink>
-                    <NavLink className='nav-link small' to='/services'>{'SERVICES'}</NavLink>
+                    <NavLink exact className='nav-link  small' to='/'>{'HOME'}</NavLink>
+                    <NavLink className='nav-link small' to='/documents'>{'DOCUMENTS'}</NavLink>
                     <NavLink className='nav-link small' to='/products'>{'PRODUCTS'}</NavLink>
                     <NavLink className='nav-link small' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
-                    <NavLink className='nav-link small' to='/contacts'>{'CONTACTS'}</NavLink>
-                    <NavLink className='nav-link small' to='/blog'>{'BLOG'}</NavLink>
+                    <NavLink className='nav-link small' to='/services'>{'SERVICES'}</NavLink>
+                    <NavLink className='nav-link small' to='/comments'>{'COMMENTS'}</NavLink>
                 </Nav>
             </Col>
             <Col xs={12} md={3} lg={3} className='footer'>
@@ -64,4 +64,14 @@ const Footer = ({ footer }) => {
     )
 }
 export { Footer }
+
+const mainFooter = {
+    getInTouch: {
+        address: '8901 Marmora Road Glasgow, DO4 89GR.',
+        freephone: '+1 800 559 6580',
+        telephone: '+1 959 603 6035',
+        fax: '+1 504 889 9898',
+        by: '© 2019 James. Agriculture Co.Privacy Policy'
+    }
+}
 

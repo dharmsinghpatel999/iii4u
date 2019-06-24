@@ -1,5 +1,6 @@
+
 import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown, } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 export default class NavBar extends Component {
@@ -36,7 +37,6 @@ export default class NavBar extends Component {
     };
 
     render() {
-        console.log('match', this.props.match);
         return (
             <header id='header'>
                 <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top color-dark-white'}>
@@ -55,18 +55,12 @@ export default class NavBar extends Component {
                         <Navbar.Toggle aria-controls='basic-navbar-nav' variant='dark' />
                         <Navbar.Collapse className='justify-content-end text-size-medium text-center' id='basic-navbar-nav'>
                             <Nav>
-                                <NavLink exact className='nav-link' to='/'>{'ABOUT US'}</NavLink>
-                                <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
-                                <NavDropdown as={NavLink} title='PRODUCTS' id='basic-nav-dropdown'>
-                                    <NavDropdown.Item className='nav-link' to='/'>Apple</NavDropdown.Item>
-                                    <NavDropdown.Item className='nav-link' to='#action/3.2'>Mengo</NavDropdown.Item>
-                                    <NavDropdown.Item className='nav-link' to='#action/3.3'>Banana</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item className='nav-link' to='#action/3.4'>OTHER</NavDropdown.Item>
-                                </NavDropdown>
+                                <NavLink exact className='nav-link' to='/'>{'HOME'}</NavLink>
+                                <NavLink className='nav-link' to='/documents'>{'DOCUMENTS'}</NavLink>
+                                <NavLink className='nav-link' to='/products'>{'PRODUCTS'}</NavLink>
                                 <NavLink className='nav-link' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
-                                <NavLink className='nav-link' to='/contacts'>{'CONTACTS'}</NavLink>
-                                <NavLink className='nav-link' to='/blog'>{'BLOG'}</NavLink>
+                                <NavLink className='nav-link' to='/services'>{'SERVICES'}</NavLink>
+                                <NavLink className='nav-link' to='/comments'>{'COMMENTS'}</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

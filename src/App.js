@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Header from './component/common/NavBar.jsx';
+import Header from './component/common/NavBar.js';
 import Routing from './component/routing'
 import { Container } from 'react-bootstrap';
 import './App.css'

@@ -11,7 +11,6 @@ class About extends Component {
             direction: null,
             videoList: videoes.slice(0, 4)
         };
-        console.log('window=', window.innerHeight);
     }
 
     handleSelect(selectedIndex, e) {
@@ -22,40 +21,51 @@ class About extends Component {
         console.log(this.state, e);
     }
 
-    render() {
+    renderCarousel(pictures) {
         const { index, direction } = this.state;
         return (
+            <Carousel
+                interval={2000}
+                indicators={false}
+                // fade={true}
+                activeIndex={index}
+                direction={direction}
+                onSelect={this.handleSelect.bind(this)}
+            >
+                {
+                    pictures.map((picture, index) => {
+                        return (
+                            <Carousel.Item key={index}>
+                                <img
+                                    className='d-block w-100 img-circle'
+                                    src={picture}
+                                    alt='First slide'
+                                />
+                            </Carousel.Item>
+                        )
+                    })
+                }
+            </Carousel>
+        )
+    }
+
+    render() {
+        return (
             <section>
-                <Carousel
-                    interval={2000}
-                    indicators={false}
-                    // fade={true}
-                    activeIndex={index}
-                    direction={direction}
-                    onSelect={this.handleSelect.bind(this)}
-                >
-                    {
-                        pictures.map((picture, index) => {
-                            return (
-                                <Carousel.Item key={index}>
-                                    <img
-                                        className='d-block w-100 img-circle'
-                                        src={picture}
-                                        alt='First slide'
-                                    />
-                                </Carousel.Item>
-                            )
-                        })
-                    }
-                </Carousel>
+
+                {this.renderCarousel(pictures)}
 
                 <Info data={welcome} />
 
-                <DocList data={product} />
+                <DocList data={product} title={'OUR DOCUMENTS'} nav={'/documents'} />
 
-                <CardList data={this.state.videoList} />
+                <CardList data={this.state.videoList} title={'OUR PRODUCTS'} nav={'/products'} />
 
-                <Info data={event} />
+                <DocList data={product} title={'NEWS & EVENTS'} nav={'/newsevents'} />
+
+                <CardList data={this.state.videoList} title={'OUR SERVICES'} nav={'/services'} />
+
+                <Info data={event} nav={'/comments'} />
 
                 <Footer footer={footer} />
 
@@ -78,7 +88,7 @@ const welcome = {
 }
 
 const event = {
-    title: 'News!',
+    title: 'Comments!',
     body: 'Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.',
     btn: 'Read More'
 }

@@ -1,99 +1,22 @@
-import React, { Component } from 'react';
-import { Carousel } from 'react-bootstrap';
-import { DocList, TitleNav, CardList, Info } from '../component/common';
-import { Footer } from '../component/common/Footer';
-
-class Home extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            index: 0,
-            direction: null,
-            videoList: videoes.slice(0, 4)
-        };
-    }
-
-    handleSelect(selectedIndex, e) {
-        this.setState({
-            index: selectedIndex,
-            direction: e.direction,
-        });
-        console.log(this.state, e);
-    }
-
-    renderCarousel(pictures) {
-        const { index, direction } = this.state;
-        return (
-            <Carousel
-                interval={2000}
-                indicators={false}
-                // fade={true}
-                activeIndex={index}
-                direction={direction}
-                onSelect={this.handleSelect.bind(this)}
-            >
-                {
-                    pictures.map((picture, index) => {
-                        return (
-                            <Carousel.Item key={index}>
-                                <img
-                                    className='d-block w-100 img-circle'
-                                    src={picture}
-                                    alt='First slide'
-                                />
-                            </Carousel.Item>
-                        )
-                    })
-                }
-            </Carousel>
-        )
-    }
-
-    render() {
-        return (
-            <section>
-
-                {this.renderCarousel(pictures)}
-
-                <Info data={welcome} />
-
-                <DocList data={product} title={'OUR DOCUMENTS'} nav={'/documents'} />
-
-                <CardList data={this.state.videoList} title={'OUR PRODUCTS'} nav={'/products'} />
-
-                <DocList data={product} title={'NEWS & EVENTS'} nav={'/newsevents'} date={'March 29'} />
-
-                <CardList data={this.state.videoList} title={'OUR SERVICES'} nav={'/services'} />
-
-                <Info data={event} nav={'/comments'} />
-
-                <Footer footer={footer} />
-
-            </section>
-        );
-    }
-}
-export { Home }
-
-const pictures = [
+export const pictures = [
     'https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA',
     'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC'
 ]
 
-const welcome = {
+export const welcome = {
     title: 'Welcome to our company!',
     body: 'Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.',
     btn: 'Learn more'
 }
 
-const event = {
+export const event = {
     title: 'Comments!',
     body: 'Epsum factorial non deposit quid pro quo hic escorol. Oquarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium timate.',
     btn: 'Read More'
 }
 
-const videoes = [
+export const videoes = [
     {
         link: '',
         title: 'QUISQUE NULLA VESTIBULUM1',
@@ -131,7 +54,7 @@ const videoes = [
     }
 ]
 
-const product = [
+export const product = [
     {
         img: '',
         title: 'QUISQUE NULLA VESTIBULUM1',
@@ -165,7 +88,7 @@ const product = [
 
 ]
 
-const footer = {
+export const footer = {
     getInTouch: {
         address: '8901 Marmora Road Glasgow, DO4 89GR.',
         freephone: '+1 800 559 6580',

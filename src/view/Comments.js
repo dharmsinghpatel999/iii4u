@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-class Blog extends Component {
+class Comments extends Component {
     render() {
         return (
-            <div> Blog</div>
+            <div> Comments </div>
         );
     }
 }
-
-export { Blog }
+export { Comments };

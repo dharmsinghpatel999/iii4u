@@ -1,15 +1,15 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 
-const CarouselList = ({ pictures }) => {
+let index = 0, direction = null;
+const CustomCarousel = ({ pictures }) => {
     return (
         <Carousel
-            interval={200000}
+            interval={2000}
             indicators={false}
-            fade={true}
-            // activeIndex={index}
-            // direction={direction}
-            onSelect={this.handleSelect.bind(this)}
+            activeIndex={index}
+            direction={direction}
+            onSelect={handleSelect}
         >
             {
                 pictures.map((picture, index) => {
@@ -27,3 +27,13 @@ const CarouselList = ({ pictures }) => {
         </Carousel>
     )
 }
+
+function handleSelect(selectedIndex, e) {
+
+    index = selectedIndex;
+    direction = e.direction;
+
+    console.log(selectedIndex, e);
+}
+
+export { CustomCarousel };
