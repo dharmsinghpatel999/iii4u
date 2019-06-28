@@ -18,7 +18,7 @@ class Documents extends Component {
                         {
                             product.slice(0, 6).map((element, index) => {
                                 return (
-                                    <Col xs={12} md={6} lg={6} key={`col${index}`} className='mb-5'>
+                                    <Col xs={12} md={6} lg={4} key={`col${index}`} className='mb-5'>
                                         <Row>
                                             <Col>
                                                 <h5 className='color-medium-gray ' ><b>{element.title}</b></h5>

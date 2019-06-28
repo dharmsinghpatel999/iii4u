@@ -11,15 +11,15 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = ({ footer = mainFooter }) => {
     return (
-        <article className='bgc-medium-gray pt-5 pb-5 row layout-body' id='footer'>
+        <article className='bgc-medium-gray pt-5 pb-3 mb-2 row layout-body' id='footer'>
             <Col xs={12} md={3} lg={3} className=''>
-                <h3 className='lead color-green line-height-normal mb-4'>Get in touch</h3>
-                <address className='small mt-3 mb-3 color-light-gray'>8901 Marmora Road Glasgow, DO4 89GR.</address>
-                <dl className='footer-row small color-light-gray'>
+                <h3 className='lead color-green line-height-normal mb-4 mb-0'>Get in touch</h3>
+                <p className='small mt-3 mb-3 color-light-gray'>8901 Marmora Road Glasgow, DO4 89GR.</p>
+                <dl className='footer-row small color-light-gray mb-0'>
                     <dt>Freephone: </dt>
                     <dd>{footer.getInTouch.freephone}</dd>
                 </dl>
-                <dl className='footer-row small color-light-gray'>
+                <dl className='footer-row small color-light-gray mb-0'>
                     <dt>Telephone: </dt>
                     <dd>{footer.getInTouch.telephone}</dd>
                 </dl>
@@ -38,12 +38,12 @@ const Footer = ({ footer = mainFooter }) => {
                     onSelect={selectedKey => alert(`selected ${selectedKey}`)}
                     className='flex-column small'
                 >
-                    <NavLink exact className='nav-link  small' to='/'>{'HOME'}</NavLink>
-                    <NavLink className='nav-link small' to='/documents'>{'DOCUMENTS'}</NavLink>
-                    <NavLink className='nav-link small' to='/products'>{'PRODUCTS'}</NavLink>
-                    <NavLink className='nav-link small' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
-                    <NavLink className='nav-link small' to='/services'>{'SERVICES'}</NavLink>
-                    <NavLink className='nav-link small' to='/comments'>{'COMMENTS'}</NavLink>
+                    <NavLink exact className='nav-link  small pt-0' to='/'>{'HOME'}</NavLink>
+                    <NavLink className='nav-link small pt-1' to='/documents'>{'DOCUMENTS'}</NavLink>
+                    <NavLink className='nav-link small pt-1' to='/products'>{'PRODUCTS'}</NavLink>
+                    <NavLink className='nav-link small pt-1' to='/newsevents'>{'NEWS & EVENTS'}</NavLink>
+                    <NavLink className='nav-link small pt-1' to='/services'>{'SERVICES'}</NavLink>
+                    <NavLink className='nav-link small pt-1' to='/comments'>{'COMMENTS'}</NavLink>
                 </Nav>
             </Col>
             <Col xs={12} md={3} lg={3} className='footer'>
@@ -58,7 +58,7 @@ const Footer = ({ footer = mainFooter }) => {
             <Col xs={12} md={3} lg={3} className='footer'>
                 <h6 className='color-dark-white lead mb-4'>Join our newsletter</h6>
                 <p className='color-light-gray small'>And always stay informed of the latest farm and location news!</p>
-                <Button className='color-green bgc-white'>Sign up</Button>
+                <Button className='color-green bgc-white border-0'>Sign up</Button>
             </Col>
         </article>
     )

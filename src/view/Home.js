@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { DocList, TitleNav, CardList, Info } from '../component/common';
+import { DocList, CardList, Info } from '../component/common';
 import { Footer } from '../component/common/Footer';
 
 class Home extends Component {
@@ -9,7 +9,7 @@ class Home extends Component {
         this.state = {
             index: 0,
             direction: null,
-            videoList: videoes.slice(0, 4)
+            videoList: videoes.slice(0, 6)
         };
     }
 
@@ -95,55 +95,60 @@ const event = {
 
 const videoes = [
     {
-        link: '',
+        link: 'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC',
         title: 'QUISQUE NULLA VESTIBULUM1',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
+        link: 'https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg',
         title: 'QUISQUE NULLA VESTIBULUM2',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
+        link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA',
         title: 'QUISQUE NULLA VESTIBULUM3',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
+        link: 'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC',
         title: 'QUISQUE NULLA VESTIBULUM4',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
-        title: 'QUISQUE NULLA VESTIBULUM5',
+        link: 'https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg',
+        title: 'QUISQUE NULLA VESTIBULUM1',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
-        title: 'QUISQUE NULLA VESTIBULUM7',
+        link: 'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC',
+        title: 'QUISQUE NULLA VESTIBULUM2',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
     },
     {
-        link: '',
-        title: 'QUISQUE NULLA VESTIBULUM6',
+        link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA',
+        title: 'QUISQUE NULLA VESTIBULUM3',
         peragraph: 'Epsum factorial noquid pro quo hic escorol'
-    }
+    },
+    {
+        link: 'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC',
+        title: 'QUISQUE NULLA VESTIBULUM4',
+        peragraph: 'Epsum factorial noquid pro quo hic escorol'
+    },
 ]
 
 const product = [
     {
-        img: '',
+        img: 'https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454__340.jpg',
         title: 'QUISQUE NULLA VESTIBULUM1',
         peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
     },
     {
-        img: '',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfao7bpcWcmbzZQ6QW6LHHwljjIfFwyEgsegZKEZP5gxmZB5e1gA',
         title: 'QUISQUE NULLA VESTIBULUM2',
         peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
     },
     {
-        img: '',
+        img: 'https://www.ruralmarketing.in/sites/default/files/styles/large/public/meet-the-guru-of-agriculture-data-collection.jpg?itok=G0E8dgJC',
         title: 'QUISQUE NULLA VESTIBULUM3',
         peragraph: 'Epsum factorial noquid pro quo hic escorol. Olypian quarilla congolium si nauseum. Souvlakgnitus carborundume pluribus unum. facto lingo est igpay atinlay. Marquelectus non provisio incongruous feline.'
     },

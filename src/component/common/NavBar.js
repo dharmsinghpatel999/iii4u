@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 export default class NavBar extends Component {
@@ -39,7 +39,8 @@ export default class NavBar extends Component {
     render() {
         return (
             <header id='header'>
-                <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top color-dark-white'}>
+                {/* <article className={this.state.visible ? 'bg-light' : 'bg-light container-fluid fixed-top color-dark-white'}> */}
+                <article className={this.state.visible ? 'bg-light' : 'bg-light color-dark-white'}>
                     <div className={this.state.visible ? 'divider' : ''} />
                     <Navbar expand='lg' bg='light' variant='dark' className={this.state.visible ? 'header-static shadow' : 'header-flow'}>
                         <Navbar.Brand href='#home'>

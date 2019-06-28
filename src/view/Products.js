@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { TitleNav } from '../component/common';
+import { TitleNav, Info } from '../component/common';
 import { colors } from '../resources';
 import { Row, Card, Button, Col } from 'react-bootstrap';
-import { videoes } from '../api/services';
+import { videoes, welcome } from '../api/services';
 import { Footer } from '../component/common/Footer';
 
 class Products extends Component {
   render() {
     return (
       <section>
-        <article className='d-flex flex-column layout-body bgc-white mt-5 mb-5'>
+        <Info data={welcome} />
+        <article className='d-flex flex-column layout-body bgc-dark-white pt-5 pb-5'>
           <TitleNav dividerStyle={{ backgroundColor: colors.dark_gray }} faAngleRight={'white'} title={'products overview'} navShow={false} />
 
           <Row key={`row${0}`}>
@@ -33,6 +34,7 @@ class Products extends Component {
             }
           </Row>
         </article>
+        <Footer />
       </section>
     );
   }

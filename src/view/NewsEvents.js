@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Footer } from '../component/common/Footer';
-import { TitleNav } from '../component/common';
+import { TitleNav, Info } from '../component/common';
 import { colors } from '../resources';
 import { Row, Col } from 'react-bootstrap';
-import { product } from '../api/services';
+import { product, welcome } from '../api/services';
 
 class NewsEvents extends Component {
   render() {
     return (
       <section>
+        <Info data={welcome} />
         <article className='d-flex flex-column pt-5 layout-body bgc-dark-white'>
 
           <TitleNav dividerStyle={{ backgroundColor: colors.light_gray, }} title={'News & Events'} navShow={false} />
